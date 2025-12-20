@@ -1,0 +1,46 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output ----
+dist/
+*.tsbuildinfo
+
+# ---- Logs ----
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# ---- OS / Editor ----
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ---- Cache / temp ----
+.cache/
+.tmp/
+temp/
+tmp/
+
+# ---- Coverage / test artifacts ----
+coverage/
+.nyc_output/
+
+# Vitest (if it creates artifacts in your setup)
+.vitest/
+
+# ---- Env files ----
+.env
+.env.*
+!.env.example
+
+# ---- Misc ----
+*.tgz
