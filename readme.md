@@ -12,8 +12,8 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 - [x] `from(source)` entry point
 - [x] Accepts any `Iterable<T>`
 - [x] Returns a reusable sequence wrapper (not a one-shot iterator)
-- [ ] Lazy execution via generators
-- [ ] Multiple enumeration behaves consistently
+- [x] Lazy execution via generators
+- [x] Multiple enumeration behaves consistently
 - [x] Clear distinction between:
     - [x] Intermediate operators (lazy)
     - [x] Terminal operators (eager)
@@ -26,8 +26,8 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 - [x] `Where(predicate)`
 - [x] `Where(predicate, index)`
-- [ ] `Select(selector)`
-- [ ] `Select(selector, index)`
+- [x] `Select(selector)`
+- [x] `Select(selector, index)`
 - [ ] `SelectMany(selector)`
 - [ ] `SelectMany(selector, resultSelector?)`
 
@@ -37,12 +37,12 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 > One of the most “LINQ-defining” features.
 
-- [ ] `OrderBy(keySelector)`
-- [ ] `OrderByDescending(keySelector)`
+- [x] `OrderBy(keySelector)`
+- [x] `OrderByDescending(keySelector)`
 - [ ] `ThenBy(keySelector)`
 - [ ] `ThenByDescending(keySelector)`
-- [ ] Stable ordering guaranteed
-- [ ] Deferred execution until enumeration
+- [x] Stable ordering guaranteed
+- [x] Deferred execution until enumeration
 - [ ] Buffering behavior documented
 
 ---
@@ -119,10 +119,10 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 > Error behavior must be consistent and predictable.
 
-- [ ] `First(predicate?)`
-- [ ] `FirstOrDefault(predicate?)`
-- [ ] `Single(predicate?)`
-- [ ] `SingleOrDefault(predicate?)`
+- [x] `First(predicate?)`
+- [x] `FirstOrDefault(predicate?)`
+- [x] `Single(predicate?)`
+- [x] `SingleOrDefault(predicate?)`
 - [ ] `Last(predicate?)`
 - [ ] `LastOrDefault(predicate?)`
 - [ ] `ElementAt(index)`
@@ -136,7 +136,7 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 > Explicit boundaries between lazy and eager.
 
 - [x] `ToArray()`
-- [ ] `ToSet()`
+- [x] `ToSet()`
 - [ ] `ToMap(keySelector, valueSelector)`
 - [ ] `ToObject(keySelector, valueSelector)`
 - [ ] `DefaultIfEmpty(defaultValue?)`

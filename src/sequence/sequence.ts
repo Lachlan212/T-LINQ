@@ -6,7 +6,7 @@ export class Sequence<T> implements Iterable<T> {
      * Store a *factory* that can produce a fresh Iterable each time.
      * This makes the Sequence re-iterable even when built from generators.
      */
-    private constructor(getIterable: () => Iterable<T>) {
+    constructor(getIterable: () => Iterable<T>) {
         this._getIterable = getIterable;
     }
 
