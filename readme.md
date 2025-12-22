@@ -53,7 +53,7 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 - [ ] `GroupBy(keySelector)`
 - [ ] `GroupBy(keySelector, elementSelector)`
-- [ ] `Grouping<TKey, TElement>` abstraction
+- [x] `Grouping<TKey, TElement>` abstraction
     - [ ] `.key`
     - [ ] iterable values
 - [ ] Preserve insertion order of groups
