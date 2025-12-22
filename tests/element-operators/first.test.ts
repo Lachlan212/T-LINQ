@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { from } from '../../src/index';
+import { from } from '../../src';
 
 describe('first()', () => {
     it('returns the first element of a sequence', () => {

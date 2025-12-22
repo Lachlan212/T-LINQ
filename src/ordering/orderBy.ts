@@ -1,6 +1,6 @@
-import type { KeySelector } from '../..';
-import { defaultComparer, descending, type Comparer } from '../comparer';
-import { OrderedSequence } from '../ordered-sequence';
+import { defaultComparer, descending, type Comparer } from '@/comparer';
+import type { KeySelector } from '@/index';
+import { OrderedSequence } from '@/ordered-sequence';
 
 //TODO: optimize by caching keys during buffering phase
 

@@ -1,4 +1,4 @@
-import { Sequence, type Selector } from '../..';
+import { type Selector, Sequence } from '@/index';
 
 export default function select<TSource, TResult>(
     source: Iterable<TSource>,

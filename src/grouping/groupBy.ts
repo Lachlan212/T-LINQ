@@ -1,5 +1,5 @@
-import { type ElementSelector, type KeySelector, Sequence } from '../..';
-import { Grouping } from '../grouping';
+import { Grouping } from '@/grouping';
+import { Sequence, type ElementSelector, type KeySelector } from '@/index';
 
 /**
  * Groups elements of a sequence according to a specified key selector function.

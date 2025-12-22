@@ -1,4 +1,4 @@
-import type { Predicate } from '../..';
+import type { Predicate } from '@/index';
 
 export function count<T>(source: Iterable<T>, predicate?: Predicate<T>): number {
     let i = 0;

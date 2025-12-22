@@ -28,8 +28,8 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 - [x] `Where(predicate, index)`
 - [x] `Select(selector)`
 - [x] `Select(selector, index)`
-- [ ] `SelectMany(selector)`
-- [ ] `SelectMany(selector, resultSelector?)`
+- [x] `SelectMany(selector)`
+- [x] `SelectMany(selector, resultSelector?)`
 
 ---
 
@@ -51,14 +51,14 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 > Enables most analytical queries.
 
-- [ ] `GroupBy(keySelector)`
-- [ ] `GroupBy(keySelector, elementSelector)`
+- [x] `GroupBy(keySelector)`
+- [x] `GroupBy(keySelector, elementSelector)`
 - [x] `Grouping<TKey, TElement>` abstraction
-    - [ ] `.key`
-    - [ ] iterable values
-- [ ] Preserve insertion order of groups
-- [ ] `ToLookup(keySelector)` (indexable grouping)
-- [ ] `lookup.get(key)` returns empty sequence when missing
+    - [x] `.key`
+    - [x] iterable values
+- [x] Preserve insertion order of groups
+- [x] `ToLookup(keySelector)` (indexable grouping)
+- [x] `lookup.get(key)` returns empty sequence when missing
 
 ---
 
@@ -104,12 +104,12 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 > Short-circuiting correctness matters.
 
-- [ ] `Any(predicate?)`
-- [ ] `All(predicate)`
+- [x] `Any(predicate?)`
+- [x] `All(predicate)`
 - [x] `Count(predicate?)`
-- [ ] `Sum(selector?)`
-- [ ] `Average(selector?)`
-- [ ] `Min(selector?)`
+- [x] `Sum(selector?)`
+- [x] `Average(selector?)`
+- [x] `Min(selector?)`
 - [ ] `Max(selector?)`
 - [ ] `Aggregate(seed?, accumulator, resultSelector?)`
 

@@ -1,5 +1,4 @@
-import type { Predicate } from '../..';
-import { Sequence } from '../sequence';
+import { type Predicate, Sequence } from '@/index';
 
 /**
  * Filters a sequence of values based on a predicate

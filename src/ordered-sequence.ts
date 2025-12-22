@@ -1,5 +1,5 @@
-import type { Comparer } from './comparer';
-import { Sequence } from './sequence';
+import type { Comparer } from '@/comparer';
+import { Sequence } from '@/sequence';
 
 /**
  * Represents a sequence with an ordering applied.

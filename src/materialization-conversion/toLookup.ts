@@ -1,5 +1,5 @@
-import type { ElementSelector, KeySelector } from '../..';
-import { Lookup } from '../lookup';
+import type { ElementSelector, KeySelector } from '@/index';
+import { Lookup } from '@/lookup';
 
 export function toLookup<TSource, TKey>(
     source: Iterable<TSource>,

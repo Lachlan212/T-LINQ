@@ -1,4 +1,4 @@
-import type { Predicate } from '../..';
+import type { Predicate } from '@/index';
 
 export function single<T>(source: Iterable<T>, predicate?: Predicate<T>): T {
     let i = 0;

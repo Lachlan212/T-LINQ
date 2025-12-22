@@ -69,4 +69,20 @@ describe('groupBy()', () => {
             values: [20],
         });
     });
+
+    it('preserves insertion order of groups', () => {
+        const source = [
+            { id: 1, category: 'B' },
+            { id: 2, category: 'A' },
+            { id: 3, category: 'C' },
+            { id: 4, category: 'A' },
+            { id: 5, category: 'B' },
+        ];
+
+        const result = from(source)
+            .groupBy((item) => item.category)
+            .toArray();
+
+        expect(result.map((g) => g.key)).toEqual(['B', 'A', 'C']);
+    });
 });

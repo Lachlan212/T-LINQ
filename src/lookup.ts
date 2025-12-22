@@ -1,4 +1,4 @@
-import { Grouping } from './grouping';
+import { Grouping } from '@/grouping';
 
 export class Lookup<TKey, TElement> implements Iterable<Grouping<TKey, TElement>> {
     private readonly map: Map<TKey, readonly TElement[]>;
