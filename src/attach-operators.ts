@@ -24,12 +24,28 @@ import { toLookup } from '@/materialization-conversion/toLookup';
 import { toSet } from '@/materialization-conversion/toSet';
 import type { OrderedSequence } from '@/ordered-sequence';
 import { orderBy, orderByDescending } from '@/ordering/orderBy';
+import { thenBy, thenByDescending } from '@/ordering/thenBy';
 import all from '@/quantifiers-aggregation/all';
 import any from '@/quantifiers-aggregation/any';
 import { average } from '@/quantifiers-aggregation/average';
 import { count } from '@/quantifiers-aggregation/count';
+import { max } from '@/quantifiers-aggregation/max';
 import { min } from '@/quantifiers-aggregation/min';
 import { sum } from '@/quantifiers-aggregation/sum';
+
+declare module './ordered-sequence' {
+    interface OrderedSequence<T> {
+        thenBy<TKey>(
+            keySelector: KeySelector<T, TKey>,
+            keyComparer?: Comparer<TKey>,
+        ): OrderedSequence<T>;
+
+        thenByDescending<TKey>(
+            keySelector: KeySelector<T, TKey>,
+            keyComparer?: Comparer<TKey>,
+        ): OrderedSequence<T>;
+    }
+}
 
 declare module './sequence' {
     interface Sequence<T> {
@@ -77,6 +93,8 @@ declare module './sequence' {
         average(selector: ElementSelector<T, number | null | undefined>): number;
         min<TNum extends number | null | undefined>(this: Sequence<TNum>): number | undefined;
         min(selector: ElementSelector<T, number | null | undefined>): number | undefined;
+        max<TNum extends number | null | undefined>(this: Sequence<TNum>): number | undefined;
+        max(selector: ElementSelector<T, number | null | undefined>): number | undefined;
 
         toLookup<TKey>(keySelector: KeySelector<T, TKey>): Lookup<TKey, T>;
         toLookup<TKey, TElement>(
@@ -202,6 +220,32 @@ Sequence.prototype.average = function <T>(
 Sequence.prototype.min = function <T>(
     this: Sequence<T>,
     selector?: ElementSelector<T, Nullable<number>>,
-): T | undefined {
+): number | undefined {
     return min(this, selector as any);
+};
+
+Sequence.prototype.max = function <T>(
+    this: Sequence<T>,
+    selector?: ElementSelector<T, Nullable<number>>,
+): number | undefined {
+    return max(this, selector as any);
+};
+
+// OrderedSequence prototype methods
+import { OrderedSequence as OrderedSequenceClass } from '@/ordered-sequence';
+
+OrderedSequenceClass.prototype.thenBy = function <T, TKey>(
+    this: OrderedSequence<T>,
+    keySelector: KeySelector<T, TKey>,
+    keyComparer?: Comparer<TKey>,
+): OrderedSequence<T> {
+    return thenBy(this, keySelector, keyComparer);
+};
+
+OrderedSequenceClass.prototype.thenByDescending = function <T, TKey>(
+    this: OrderedSequence<T>,
+    keySelector: KeySelector<T, TKey>,
+    keyComparer?: Comparer<TKey>,
+): OrderedSequence<T> {
+    return thenByDescending(this, keySelector, keyComparer);
 };

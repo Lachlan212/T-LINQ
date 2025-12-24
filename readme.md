@@ -39,8 +39,8 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 - [x] `OrderBy(keySelector)`
 - [x] `OrderByDescending(keySelector)`
-- [ ] `ThenBy(keySelector)`
-- [ ] `ThenByDescending(keySelector)`
+- [x] `ThenBy(keySelector)`
+- [x] `ThenByDescending(keySelector)`
 - [x] Stable ordering guaranteed
 - [x] Deferred execution until enumeration
 - [ ] Buffering behavior documented
@@ -110,7 +110,7 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 - [x] `Sum(selector?)`
 - [x] `Average(selector?)`
 - [x] `Min(selector?)`
-- [ ] `Max(selector?)`
+- [x] `Max(selector?)`
 - [ ] `Aggregate(seed?, accumulator, resultSelector?)`
 
 ---
