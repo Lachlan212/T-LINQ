@@ -90,8 +90,8 @@ The goal is to capture **LINQ-to-Objects semantics**, not just functional helper
 
 > Enables safe streaming and infinite sequences.
 
-- [ ] `Take(count)`
-- [ ] `Skip(count)`
+- [x] `Take(count)`
+- [x] `Skip(count)`
 - [ ] `TakeWhile(predicate)`
 - [ ] `SkipWhile(predicate)`
 - [ ] `Concat(other)`

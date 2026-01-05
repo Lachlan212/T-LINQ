@@ -25,6 +25,8 @@ import { toSet } from '@/materialization-conversion/toSet';
 import type { OrderedSequence } from '@/ordered-sequence';
 import { orderBy, orderByDescending } from '@/ordering/orderBy';
 import { thenBy, thenByDescending } from '@/ordering/thenBy';
+import { skip } from '@/partitioning-and-flow-control/skip';
+import { take } from '@/partitioning-and-flow-control/take';
 import all from '@/quantifiers-aggregation/all';
 import any from '@/quantifiers-aggregation/any';
 import { average } from '@/quantifiers-aggregation/average';
@@ -80,6 +82,9 @@ declare module './sequence' {
             keySelector: KeySelector<T, TKey>,
             elementSelector: ElementSelector<T, TElement>,
         ): Sequence<Grouping<TKey, TElement>>;
+
+        take(count: number): Sequence<T>;
+        skip(count: number): Sequence<T>;
 
         //terminal
         toArray(): T[];
@@ -229,6 +234,14 @@ Sequence.prototype.max = function <T>(
     selector?: ElementSelector<T, Nullable<number>>,
 ): number | undefined {
     return max(this, selector as any);
+};
+
+Sequence.prototype.take = function <T>(this: Sequence<T>, count: number): Sequence<T> {
+    return take(this, count);
+};
+
+Sequence.prototype.skip = function <T>(this: Sequence<T>, count: number): Sequence<T> {
+    return skip(this, count);
 };
 
 // OrderedSequence prototype methods
